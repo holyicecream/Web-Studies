@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="login.css" rel="stylesheet">
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+        <script src="login.js"></script>
+    </head>
+    <body>
+        <div class="Tela">
+            <button class="btn_volta" onclick="window.location.href='cadastro.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Login</h1>
+            <form>
+                <label class="label" for="email" id="labelEmail">E-mail:</label>
+                <br>
+                <input class="caixa" id="email">
+                <br>
+                <label class="label" for="senha" id="labelSenha">Senha:</label>
+                <input class="caixa" id="senha" type="password">
+                <br>
+                <p class="texto">Não possui cadastro? <a class="link" href="cadastro.html">Cadastrar</a></p>
+                <br>
+            </form>
+            <button class="botao" onclick="entrar()">Login</button>
+        </div>
+    </body>
+</html>

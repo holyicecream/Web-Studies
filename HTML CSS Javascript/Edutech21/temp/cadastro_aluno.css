@@ -1,0 +1,134 @@
+.divisoria{
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    width: 550px;
+    height: 760px;
+    border: 1px solid black;
+}
+
+.divisoria2{
+    overflow: auto;
+}
+
+.btn_volta{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    position: absolute;
+    margin-top: 26px; 
+}
+
+.volta{
+    overflow: auto;
+    height: 55px;
+    width: 55px;
+    float: left;
+}
+
+.col2{
+    width: 49%;
+    float: left;
+}
+
+.Titulo{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0F2C63;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:19px;
+    color: #0F2C63;
+    margin-left: 54px;
+}
+.label2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:19px;
+    color: #0F2C63;
+    margin-left: 15px;
+    margin-top: 50px
+}
+
+.caixa{
+    color:#0F2C63;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 20px;
+    width: 420px;
+    padding: 8px;
+    display:block;
+    font-size: 20px;
+    border-style: none;
+    border: 2px solid #0F2C63;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto; 
+    background: #ffffff;
+}
+.caixa2{
+    margin-bottom: 10px;
+
+    color:#0F2C63;
+    margin-top: 10px;
+    height: 20px;
+    width: 190px;
+    padding: 8px;
+    display:block;
+    font-size: 20px;
+    border-style: none;
+    border: 2px solid #0F2C63;
+    border-radius: 8px;
+    margin-left: 54px;
+    background: #ffffff;
+}
+
+.caixa3{
+    margin-bottom: 10px;
+
+    color:#0F2C63;
+    margin-top: 10px;
+    display: inline-block;
+    padding-bottom: 100px;
+    height: 20px;
+    width: 190px;
+    padding: 8px;
+    display:block;
+    font-size: 20px;
+    border-style: none;
+    border: 2px solid #0F2C63;
+    border-radius: 8px;
+    margin-left: 15px;
+    background: #ffffff;
+}
+
+.texto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0F2C63;
+}
+
+.link{
+    font-weight: 600;
+    color: #0F2C63;
+    text-decoration: solid;
+}
+
+.botao{
+    display:block;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px 64px;
+    border-style: none;
+    border-radius: 50px;
+    color: white;
+    background: #0F2C63;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}

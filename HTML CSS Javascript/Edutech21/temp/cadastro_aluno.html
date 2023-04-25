@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="cadastro_aluno.css" rel="stylesheet">
+    <head>
+        <title>Cadastro Professor</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+        <script src="cadastro_aluno.js" defer></script>
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='cadastro.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Cadastro Aluno</h1>
+            <label class="label" for="nome" id="labelNome">Nome:</label>
+            <input class="caixa" id="nome">
+            <div class="divisoria2">
+                <div class="col2">
+                    <label class="label" for="RA" id="labelRA">RA:</label>
+                    <input class="caixa2" id="RA">
+                </div>
+                <div class="col2">
+                    <label class="label2" for="Celular" id="labelCelular">N° de Celular:</label>
+                    <input class="caixa3" id="Celular">
+                </div>
+            </div>
+            <label class="label" for="email" id="labelEmail">E-mail:</label>
+            <input class="caixa" id="email">
+            <label class="label" for="cidade" id="labelCidade">Cidade:</label>
+            <input list="cidades" class="caixa" id="cidade">
+            <datalist id="cidades">
+                <option value="Sorocaba">
+                <option value="São Paulo">
+                <option value="Votorantim">
+            </datalist> 
+            <div class="divisoria2">
+                <div class="col2">
+                    <label class="label" for="escola" id="labelEscola">Escola:</label>
+                    <input list="escolas1" class="caixa2" id="escola">
+                    <datalist id="escolas1">
+                        <option value="Eneas">
+                        <option value="Ezequiel">
+                        <option value="Etec">
+                    </datalist>  
+                </div> 
+                <div class="col2">
+                    <label class="label2" for="turma" id="labelTurma">Turma:</label>
+                    <input list="turmas" class="caixa3" id="turma">
+                    <datalist id="turmas">
+                        <option value="1° ano A">
+                        <option value="1° ano B">
+                        <option value="1° ano C">
+                        <option value="2° ano A">
+                        <option value="2° ano B">
+                        <option value="2° ano C">
+                        <option value="3° ano A">
+                        <option value="3° ano B">
+                        <option value="3° ano C">
+                </div> 
+            </div>
+            <div class="divisoria2">
+                <div class="col2">
+                    <label class="label" for="senha" id="labelSenha">Senha:</label>
+                    <input class="caixa2" type="password" id="senha">
+                </div>
+                <div class="col2">
+                    <label class="label2" for="confirmSenha" id="labelConfirmSenha">Confirmar senha:</label>
+                    <input class="caixa3" type="password" id="confirmSenha">
+                </div>
+            </div>
+            <p class="texto">Já possui cadastro? <a class="link" href="login.html">Login</a></p>
+            <br>
+            
+            <button class="botao" type="reset" onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </body>
+</html>

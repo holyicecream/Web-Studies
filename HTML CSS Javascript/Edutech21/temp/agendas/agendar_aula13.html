@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="agendar_aula.css" rel="stylesheet">
+    <head>
+        <title>Agendar aula</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='/Edutech21/index.html'"><img src="/Edutech21/volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Agendar aula</h1>
+            <form id="formNovaAula">
+                <label class="label" for="titulo">Título da aula: *</label>
+                <input type="text" class="caixa" id="titulo" required>
+                <div class="divisoria2">
+                    <div class="col2">
+                        <label class="label" for="turma">Turma: *</label>
+                        <input type="text" list="turmas" class="caixa2" id="turma" required>
+                        <datalist id="turmas">
+                            <option value="1° ano A">
+                            <option value="1° ano B">
+                            <option value="1° ano C">
+                            <option value="2° ano A">
+                            <option value="2° ano B">
+                            <option value="2° ano C">
+                            <option value="3° ano A">
+                            <option value="3° ano B">
+                            <option value="3° ano C">                          
+                        </datalist>
+                    </div>
+                    <div class="col2">
+                        <label class="label2" for="data">Data: *</label>
+                        <input type="date" class="caixa3" id="data" required>
+                    </div>
+                </div>
+                <label class="label" for="materia">Matéria: *</label>
+                <input type="text" class="caixa" id="materia" required>
+                <label class="label" for="desc">Descrição:</label>
+                <textarea type="text" rows="4" cols="50" class="caixa4" id="desc"></textarea>
+                <label class="label" for="senha">Senha:</label>
+                <input class="caixa" type="password" id="senha">
+                <input type="checkbox" id="notificacao" class="notificacao">
+                <label for="notificacao" class="notificacao2"> Notificar os alunos da sala?</label>
+                <br>  
+                <input type="checkbox" id="notificNumero" class="notificacao">
+                <label for="notificNumero" class="notificacao2"> Deseja que os alunos vejam seu número de celular?</label>
+                <br>
+            </form>
+            <button class="botao" onclick="salvarNovaAula()">Agendar</button>
+        </div>
+        <div class="none">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Título:</th>
+                    <th scope="col">Turma:</th>
+                    <th scope="col">Data:</th>
+                    <th scope="col">Materia:</th>
+                    <th scope="col">Descrição:</th>
+                    <th scope="col">Senha:</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaAulas">
+              
+            </tbody>
+        </table>
+        </div>
+        <div class="none">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Título:</th>
+                        <th scope="col">Turma:</th>
+                        <th scope="col">Data:</th>
+                        <th scope="col">Materia:</th>
+                        <th scope="col">Descrição:</th>
+                        <th scope="col">Senha:</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAulas2">
+                  
+                </tbody>
+            </table>
+            </div>
+    </body>
+    <script defer>var formNovaAula = document.getElementById("formNovaAula");
+        var inputTitulo = document.getElementById("titulo");
+        var inputTurma = document.getElementById("turma");
+        var inputData = document.getElementById("data");
+        var inputMateria = document.getElementById("materia");
+        var inputDesc = document.getElementById("desc");
+        var inputSenha = document.getElementById("senha");
+        var tabelaAulas = document.getElementById("tabelaAulas");
+        
+        var listaAulas13 = JSON.parse(localStorage.getItem("listaAulas13")) || [];
+        
+        function atualizarTabelaAulas() {
+          
+          if (listaAulas13.length >= 2) {
+            // The user has already registered two aulaValid objects, so display an error message
+            alert("Você já registrou o limite máximo de aulas.");
+            window.location.href = '/Edutech21/index.html'
+          } else {
+          console.log("Chamada atualizar tabela");
+          if (listaAulas13.length === 0) {
+            tabelaAulas.innerHTML = '<tr><td colspan="3">Nenhum evento</td></tr>';
+            return;
+          }
+          tabelaAulas.innerHTML = "";
+          for (var i = 0; i < listaAulas13.length; i++) {
+            var aula = listaAulas13[i];
+            var linha = document.createElement("tr");
+            var celulaTitulo = document.createElement("td");
+            var celulaTurma = document.createElement("td");
+            var celulaData = document.createElement("td");
+            var celulaMateria = document.createElement("td");
+            var celulaDesc = document.createElement("td");
+            var celulaSenha = document.createElement("td");
+            celulaTitulo.innerText = aula.titulo;
+            celulaTurma.innerText = aula.turma;
+            celulaData.innerText = aula.data;
+            celulaMateria.innerText = aula.materia;
+            celulaDesc.innerText = aula.desc;
+            celulaSenha.innerText = aula.senha;
+            linha.appendChild(celulaTitulo);
+            linha.appendChild(celulaTurma);
+            linha.appendChild(celulaData);
+            linha.appendChild(celulaMateria);
+            linha.appendChild(celulaDesc);
+            linha.appendChild(celulaSenha);
+            tabelaAulas.appendChild(linha);
+          }
+          }
+        }
+        
+        function novaAula(titulo, turma, data, materia, desc, senha) {
+          if (titulo.trim().length === 0) return false;
+          if (turma.trim().length === 0) return false;
+          if (materia.trim().length === 0) return false;
+          var timestampEvento = Date.parse(data);
+          if (isNaN(timestampEvento)) return false;
+          var timestampAtual = new Date().getTime();
+          if (timestampEvento < timestampAtual) return false;
+          return true;
+        }
+        
+        
+        
+        function salvarNovaAula(event) {
+          var titulo = inputTitulo.value;
+          var turma = inputTurma.value;
+          var data = inputData.value;
+          var materia = inputMateria.value;
+          var desc = inputDesc.value;
+          var senha = inputSenha.value;
+        
+          if (novaAula(titulo, turma, data, materia, desc, senha)) {
+            listaAulas13.push({
+              titulo: titulo,
+              turma: turma,
+              data: data,
+              materia: materia,
+              desc: desc,
+              senha: senha,
+            });
+            localStorage.setItem("listaAulas13", JSON.stringify(listaAulas13));
+            atualizarTabelaAulas();
+            alert("Aula agendada!");
+        
+            window.location.href = '/Edutech21/index.html'
+          }
+        }
+        
+        
+        
+        window.addEventListener("load", atualizarTabelaAulas);
+        </script>
+</html>

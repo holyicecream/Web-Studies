@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="editar_aula.css" rel="stylesheet">
+    <head>
+        <title>Editar aula</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='/Edutech21/index.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Editar aula</h1>
+            <label class="label">Título da aula: *</label>
+            <input class="caixa" id="titulo">
+            <div class="divisoria2">
+                <div class="col2">
+                    <label class="label">Turma: *</label>
+                    <input list="turmas" class="caixa2" id="turma">
+                    <datalist id="turmas">
+                        <option value="1° ano A">
+                        <option value="1° ano B">
+                        <option value="1° ano C">
+                        <option value="2° ano A">
+                        <option value="2° ano B">
+                        <option value="2° ano C">
+                        <option value="3° ano A">
+                        <option value="3° ano B">
+                        <option value="3° ano C">                          
+                    </datalist>
+                </div>
+                <div class="col2">
+                    <label class="label2">Data: *</label>
+                    <input type="date" class="caixa3" id="data">
+                </div>
+            </div>
+            <label class="label">Matéria: *</label>
+            <input class="caixa" id="materia">
+            <label class="label">Descrição:</label>
+            <textarea rows="4" cols="50" class="caixa4" id="desc"></textarea>
+            <label class="label">Senha: *</label>
+            <input class="caixa" type="password" id="senha">
+            <button class="botao" onclick="">Concluir</button>
+            <p class="link" id="agendarNova"><a id="linkAula" href="/Edutech21/agendas/agendar_aula26.html" class="link">Agendar outra aula</a></p>
+        </div>
+    </body>
+    <script>
+        const listaAulas26 = JSON.parse(localStorage.getItem("listaAulas26"));
+
+        const titulo = document.querySelector("#titulo");
+        document.getElementById("titulo").value = listaAulas26[0].titulo;
+        
+        const turma = document.querySelector("#turma");
+        document.getElementById("turma").value = listaAulas26[0].turma;
+        
+        const data = document.querySelector("#data");
+        document.getElementById("data").value = listaAulas26[0].data;
+        
+        const materia = document.querySelector("#materia");
+        document.getElementById("materia").value = listaAulas26[0].materia;
+        
+        const desc = document.querySelector("#desc");
+        document.getElementById("desc").value = listaAulas26[0].desc;
+        
+        const senha = document.querySelector("#senha");
+        document.getElementById("senha").value = listaAulas26[0].senha;
+
+        if(listaAulas26.length >= 2){
+        document.getElementById("agendarNova").innerHTML = "Segunda aula"
+        document.getElementById("agendarNova").onclick = function() {
+        if (document.getElementById("agendarNova").innerHTML === "Segunda aula") {
+            titulo.value = listaAulas26[1].titulo;
+            turma.value = listaAulas26[1].turma;
+            data.value = listaAulas26[1].data;
+            materia.value = listaAulas26[1].materia;
+            desc.value = listaAulas26[1].desc;
+            senha.value = listaAulas26[1].senha;
+            document.getElementById("agendarNova").innerHTML = "Primeira aula";
+        } else {
+            titulo.value = listaAulas26[0].titulo;
+            turma.value = listaAulas26[0].turma;
+            data.value = listaAulas26[0].data;
+            materia.value = listaAulas26[0].materia;
+            desc.value = listaAulas26[0].desc;
+            senha.value = listaAulas26[0].senha;
+            document.getElementById("agendarNova").innerHTML = "Segunda aula";
+        }
+    };
+}
+
+        </script>
+</html>

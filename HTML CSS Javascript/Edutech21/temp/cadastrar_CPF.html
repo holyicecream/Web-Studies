@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="cadastrar_CPF.css" rel="stylesheet">
+    <head>
+        <title>Admin</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+        <script src="cadastrar_CPF.js"></script>
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='admin.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="titulo">Cadastro do <br>Professor</h1>
+                <div>
+                    <label class="label" id="labelNome" for="nome">Nome:</label>
+                    <input type="text" id="nome" class="caixa" placeholder=" " required>
+                </div>
+                <div>
+                    <label class="label" id="labelCPF" for="CPF">CPF:</label>
+                    <input type="text" id="CPF" maxlength="11" minlength="11" class="caixa" placeholder=" " required>
+                </div>
+                <div>
+                    <label class="label" id="labelEscolas" for="escolas">Escolas:</label>
+                    <input type="text" id="escolas" list="escolas1" class="caixa" placeholder=" " required>
+                    <datalist id="escolas1">
+                        <option value="Eneas">
+                        <option value="Ezequiel">
+                        <option value="Etec">
+                    </datalist>
+                </div>
+                    <button type="button" onclick="cadastrarProduto()" class="botao">Cadastrar</button>
+
+        </div>
+    </body>
+</html>
+
+<!---->

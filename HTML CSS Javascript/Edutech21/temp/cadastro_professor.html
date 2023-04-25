@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="cadastro_professor.css" rel="stylesheet">
+    <head>
+        <title>Cadastro Professor</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+        <script src="cadastro_prof.js" defer></script>
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='cadastro.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Cadastro Professor</h1>
+            <form id="register-form">
+                <label class="label" for="nome" id="labelNome">Nome:</label>
+                <input class="caixa" id="nome" required>
+                <div class="divisoria2">
+                    <div class="col2">                    
+                    <label class="label" for="CPF" id="labelCPF">CPF:</label> <input type="text" id="CPF" class="caixa2" required>
+                    </div>
+                    <div class="col2">
+                        <label class="label2" for="Celular" id="labelCelular">N° de Celular:</label>
+                        <input class="caixa3" id="Celular" required>
+                    </div>
+                </div>
+                <label class="label" for="email" id="labelEmail">E-mail:</label>
+                <input class="caixa" id="email" required> 
+                <label class="label" for="cidade" id="labelCidade">Cidade:</label>
+                <input list="cidades" class="caixa" id="cidade" required>
+                <datalist id="cidades">
+                    <option value="Sorocaba">
+                    <option value="São Paulo">
+                    <option value="Votorantim">
+                </datalist> 
+                <label class="label" for="escola" id="labelEscola">Escola:</label>
+                <input list="escolas1" class="caixa" id="escola" required>
+                <datalist id="escolas1">
+                    <option value="Eneas">
+                    <option value="Ezequiel">
+                    <option value="Etec">
+                </datalist>      
+                <div class="divisoria2">
+                    <div class="col2">
+                        <label class="label" for="senha" id="labelSenha">Senha:</label>
+                        <input class="caixa2" id="senha" type="password" required>
+                    </div>
+                    <div class="col2">
+                        <label class="label2" for="confirmSenha" id="labelConfirmSenha">Confirmar senha:</label>
+                        <input class="caixa3" id="confirmSenha" type="password" required>
+                    </div>
+                </div>
+            
+            <p class="texto">Já possui cadastro? <a class="link" href="login.html">Login</a></p>
+            <br>
+            
+            <button class="botao" onclick="cadastrar()" type="reset">Cadastrar</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+<!-- 
+    <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+
+<body>
+
+<div class='container'>
+  <div class='card'>
+    <h1> Cadastrar </h1>
+    
+    <div id='msgError'></div>
+    <div id='msgSuccess'></div>
+    
+            <div class="label-float">
+               <input type="text" id="nome" placeholder=" " required>
+               <label id="labelNome" for="nome">Nome</label>
+            </div>
+
+            <div class="label-float">
+               <input type="text" id="usuario" placeholder=" " required>
+               <label id="labelUsuario" for="usuario">Usuário</label>
+            </div>
+            
+            <div class="label-float">
+               <input type="password" id="senha" placeholder=" " required>
+               <label id="labelSenha" for="senha">Senha</label>
+               <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+               
+            </div>
+
+            <div class="label-float">
+               <input type="password" id="confirmSenha" placeholder=" " required>
+               <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
+               <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+            
+            <div class='justify-center'>
+               <button onclick='cadastrar()'>Cadastrar</button>
+            </div>
+
+    
+  </div>
+  </div>
+</body>
+-->
