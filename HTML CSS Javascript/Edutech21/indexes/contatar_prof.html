@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="contatar_prof.css" rel="stylesheet">
+    <head>
+        <title>Editar aula</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+
+        <meta name="keywords" content="html5, tecnologia">
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='../index.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <div class="divisoria2">
+                <p class="label">Professor:</p><p class="label3" id="#">Jean Kazuo Shinohara</p>      
+                <p class="label">E-mail:</p> <p class="label3"><a class="link" target="_blank" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJTJFvNWFgJtFJsgGBGJKWDCMMBwPnHbpVStskWSbkVkhhqjcqfKtKjhgFVNjQbRstgXnhL" >jeankazuo.o@gmail.com</a></p>
+                <p class="label">N° para contato:</p><p class="label3" id="numero"></p>  
+            </div>
+        </div>
+    </body>
+    <script>
+        const userLogado = JSON.parse(localStorage.getItem('userLogado'));
+        const listaUser = JSON.parse(localStorage.getItem('listaUser'));
+        
+        document.querySelector('#professor').innerHTML = userLogado.nome;
+        document.querySelector('#email').innerHTML = listaUser[0].EmailCad;
+        document.querySelector('#numero').innerHTML = listaUser[0].CelularCad;
+    </script>
+</html>

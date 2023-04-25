@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="editar_prof.css" rel="stylesheet">
+    <head>
+        <title>Editar conta</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+        
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='index.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Editar conta</h1>
+            <form id="register-form">
+                <label class="label">Nome:</label>
+                <input class="caixa" id="nome">
+                <div class="divisoria2">
+                    <div class="col2">                    
+                    <label class="label">CPF:</label> <input type="text" id="CPF" class="caixa2">
+                    </div>
+                    <div class="col2">
+                        <label class="label2">N° de Celular:</label>
+                        <input class="caixa3" id="celular">
+                    </div>
+                </div>
+                <label class="label">E-mail:</label>
+                <input class="caixa" id="email">
+                <label class="label">Cidade:</label>
+                <input list="cidades" class="caixa" id="cidade">
+                <datalist id="cidades">
+                    <option value="Sorocaba">
+                    <option value="São Paulo">
+                    <option value="Votorantim">
+                </datalist> 
+                <label class="label">Escola:</label>
+                <input list="escolas1" class="caixa" id="escola">
+                <datalist id="escolas1">
+                    <option value="Eneas">
+                    <option value="Ezequiel">
+                    <option value="Etec">
+                </datalist>      
+                <div class="divisoria2">
+                    <div class="col2">
+                        <label class="label">Senha nova:</label>
+                        <input class="caixa2" type="password" id="senha">
+                    </div>
+                    <div class="col2">
+                        <label class="label2">Senha antiga: *</label>
+                        <input class="caixa3" type="password" id="senhaAntiga">
+                    </div>
+                </div>
+            <br>
+            
+            <button id="btn-editar" class="botao" onclick="editar()">Confirmar</button>
+            </form>
+        </div>
+    </body>
+    <script src="editar_prof.js"></script>
+</html>

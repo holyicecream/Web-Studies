@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="aula_aluno.css" rel="stylesheet">
+    <head>
+        <title>Aula aluno</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='../index.html'"><img src="volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Aula agendada</h1>
+            <div class="divisoria2">
+                <label class="label">Título da aula: </label><p class="label2" id="titulo"></p>
+                <label class="label">Turma: </label><p class="label2" id="turma"></p>
+                <label class="label">Data: </label><p class="label2" id="data"  placeholder="dd-mm-yyyy"></p>
+                <label class="label">Matéria: </label><p class="label2" id="materia"></p>
+                <label class="label">Descrição: </label>
+            <textarea rows="4" cols="50" class="caixa4" id="desc"></textarea>
+            <p class="label3"><a href="contatar_prof.html">Contatar Professor</a></p>
+            </div>
+            <button class="botao" onclick="window.location.href='../index.html'">Concluir</button>
+            <p class="linknone" id="aulaDois">Segunda Aula</p>
+        </div>
+        
+    </body>
+    <script>
+    const listaAulas12 = JSON.parse(localStorage.getItem("listaAulas12"));
+
+    const titulo = document.querySelector("#titulo");
+    document.getElementById("titulo").innerHTML = listaAulas12[0].titulo;
+
+    const turma = document.querySelector("#turma");
+    document.getElementById("turma").innerHTML = listaAulas12[0].turma;
+
+    const data = document.querySelector("#data");
+    document.getElementById("data").innerHTML = listaAulas12[0].data;
+
+    const materia = document.querySelector("#materia");
+    document.getElementById("materia").innerHTML = listaAulas12[0].materia;
+
+    const desc = document.querySelector("#desc");
+    document.getElementById("desc").value = listaAulas12[0].desc;
+
+    if (listaAulas12.length >= 2) {
+    const aulaDois = document.getElementById("aulaDois");
+    aulaDois.className = "link";
+    aulaDois.onclick = function() {
+    if (aulaDois.innerHTML === "Segunda Aula") {
+        titulo.innerHTML = listaAulas12[1].titulo;
+        turma.innerHTML = listaAulas12[1].turma;
+        data.innerHTML = listaAulas12[1].data;
+        materia.innerHTML = listaAulas12[1].materia;
+        desc.value = listaAulas12[1].desc;
+        aulaDois.innerHTML = "Primeira Aula";
+    } else {
+        titulo.innerHTML = listaAulas12[0].titulo;
+        turma.innerHTML = listaAulas12[0].turma;
+        data.innerHTML = listaAulas12[0].data;
+        materia.innerHTML = listaAulas12[0].materia;
+        desc.value = listaAulas12[0].desc;
+        aulaDois.innerHTML = "Segunda Aula";
+    }
+};
+}
+
+
+    </script>
+    
+</html>

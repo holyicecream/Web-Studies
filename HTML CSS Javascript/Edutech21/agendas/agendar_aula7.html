@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link href="agendar_aula.css" rel="stylesheet">
+    <head>
+        <title>Agendar aula</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jean">
+        <meta name="keywords" content="html5, tecnologia">
+    </head>
+    <body>
+        <div class="divisoria">
+            <button class="btn_volta" onclick="window.location.href='/Edutech21/index.html'"><img src="/Edutech21/volta1.png" alt="volta" class="volta"></button>
+            <h1 class="Titulo">Agendar aula</h1>
+            <form id="formNovaAula">
+                <label class="label" for="titulo">Título da aula: *</label>
+                <input type="text" class="caixa" id="titulo" required>
+                <div class="divisoria2">
+                    <div class="col2">
+                        <label class="label" for="turma">Turma: *</label>
+                        <input type="text" list="turmas" class="caixa2" id="turma" required>
+                        <datalist id="turmas">
+                            <option value="1° ano A">
+                            <option value="1° ano B">
+                            <option value="1° ano C">
+                            <option value="2° ano A">
+                            <option value="2° ano B">
+                            <option value="2° ano C">
+                            <option value="3° ano A">
+                            <option value="3° ano B">
+                            <option value="3° ano C">                          
+                        </datalist>
+                    </div>
+                    <div class="col2">
+                        <label class="label2" for="data">Data: *</label>
+                        <input type="date" class="caixa3" id="data" required>
+                    </div>
+                </div>
+                <label class="label" for="materia">Matéria: *</label>
+                <input type="text" class="caixa" id="materia" required>
+                <label class="label" for="desc">Descrição:</label>
+                <textarea type="text" rows="4" cols="50" class="caixa4" id="desc"></textarea>
+                <label class="label" for="senha">Senha:</label>
+                <input class="caixa" type="password" id="senha">
+                <input type="checkbox" id="notificacao" class="notificacao">
+                <label for="notificacao" class="notificacao2"> Notificar os alunos da sala?</label>
+                <br>  
+                <input type="checkbox" id="notificNumero" class="notificacao">
+                <label for="notificNumero" class="notificacao2"> Deseja que os alunos vejam seu número de celular?</label>
+                <br>
+            </form>
+            <button class="botao" onclick="salvarNovaAula()">Agendar</button>
+        </div>
+        <div class="none">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Título:</th>
+                    <th scope="col">Turma:</th>
+                    <th scope="col">Data:</th>
+                    <th scope="col">Materia:</th>
+                    <th scope="col">Descrição:</th>
+                    <th scope="col">Senha:</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaAulas">
+              
+            </tbody>
+        </table>
+        </div>
+        <div class="none">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Título:</th>
+                        <th scope="col">Turma:</th>
+                        <th scope="col">Data:</th>
+                        <th scope="col">Materia:</th>
+                        <th scope="col">Descrição:</th>
+                        <th scope="col">Senha:</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAulas2">
+                  
+                </tbody>
+            </table>
+            </div>
+    </body>
+    <script src="agendar_aula7.js" defer></script>
+</html>

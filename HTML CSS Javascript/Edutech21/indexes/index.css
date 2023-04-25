@@ -1,0 +1,273 @@
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.divisoria{
+    display: block;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    width: 1100px;
+    height: 670px;
+    background: #0F2C63;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ .sidebar{
+   left: 0;
+}
+
+#check:checked ~ .fade{
+    left: 0;
+ }
+
+ 
+/*.btn_menu{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 20px; 
+}*/
+
+.menu{
+    margin-left: 20px;
+    margin-top: 8px;
+    height: 45px;
+    width: 45px;
+    float: left;
+    cursor: pointer;
+}
+
+.sidebar{
+    border-style: none;
+    width: 200px;
+    height: 670px;
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+    left: -200px;
+    transition: all 0.3s linear;
+}
+.fade{
+    margin-left: -100px;
+    float: left;
+    overflow: hidden;
+    width: 430px;
+    height: 670px;
+    left: -430px;
+    position: absolute;
+    transition: all 0.3s linear;
+}
+.menu_css{
+    font-size: 20px;
+    color:#0F2C63;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.menu_img{
+    width: 190px;
+}
+
+.icone{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.chao{
+    position: absolute;
+    bottom: 0;
+    height: 21px;
+    width: 200px;
+    background-color: #0F2C63;
+}
+
+.calendario{
+    display: block;
+    justify-content: center;
+}
+
+.borda{
+    border-style: none;
+    border-radius: 30px;
+    height: 56px;
+    width: 500px;
+    margin-left: 300px;
+    box-shadow: 3px 2px gray;
+    display: flex;
+
+}
+
+.btn_volta{
+    position: relative;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+
+}
+
+.volta{
+    height: 55px;
+    width: 55px;
+    float: left;
+}
+
+.btn_volta2{
+    position: relative;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+ }
+
+.volta2{
+    height: 55px;
+    width: 55px;
+    float: right;
+}
+
+.titulo{
+    color: #0F2C63;
+    position: absolute;
+    top: 25%;
+    left: 47%;
+    text-align: center;
+    margin:auto;    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+/* Month header */
+.meses {
+    width: auto;
+    height: 60px;
+    background: #fff;
+    position: relative;
+}
+
+.dias_semana{
+    font-size:17px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    height: 30px;
+    width: 120px;
+    border-radius: 20px;
+    color:#0F2C63;
+    background-color: #fff;
+    box-shadow: 5px 5px #007785;
+    margin-left: 20px;
+}
+
+/* Days (1-31) */
+.dias {
+    padding: 10px 0;
+    background: #0F2C63;
+    margin: 0;
+}
+
+.dias li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:20px;
+    color: #0F2C63;
+}
+
+/* Highlight the "current" day */
+.dias li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+.dia{
+    font-size:17px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-top:15px;
+    height: 90px;
+    width: 120px;
+    border-radius: 20px;
+    color:#0F2C63;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 5px 5px #007785;
+    margin-left: 20px;
+}
+
+.diaf{
+    font-size:17px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin-top:15px;
+    height: 90px;
+    width: 120px;
+    border-radius: 20px;
+    color:#0F2C63;
+    background-color: #EDEDED;
+    cursor: pointer;
+    box-shadow: 5px 5px #005862;
+    margin-left: 20px;
+}
+
+
+.ndia{
+    font-size:17px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-top:15px;
+    height: 90px;
+    width: 120px;
+    border-radius: 20px;
+    color:#0F2C63;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 5px 5px #007785;
+    margin-left: 20px;
+    display: none;
+}
+
+.ndiaf{
+    font-size:17px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin-top:15px;
+    height: 90px;
+    width: 120px;
+    border-radius: 20px;
+    color:#0F2C63;
+    background-color: #EDEDED;
+    cursor: pointer;
+    box-shadow: 5px 5px #005862;
+    margin-left: 20px;
+    display: none;
+}
+
+.calendario_none{
+    display: none;
+}
